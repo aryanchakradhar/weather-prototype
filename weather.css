@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .container {
+    padding: 40px;
+    text-align: center;
+    background-color: #ffebeb33;
+    box-shadow: 6px 8px 10px rgba(0,0,0,0.07);
+    width: 500px;
+    min-height: 100vh;
+    max-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+  
+  .search input {
+    border: 0;
+    outline: 0;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+  }
+  
+  .search #btn {
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search button img {
+    width: 20px;
+  
+  }
+  
+  .weather-icon{
+    width: 170px;
+    margin-top: 30px;
+  }
+  
+  .weather h1{
+    font-size: 80px;
+    font-weight: 500;
+  }
+  
+  .weather h2{
+    font-size: 45px;
+    font-weight: 400;
+  }
+  
+  .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .col{
+    display: flex;
+    align-items: center;
+  }
+  
+  .col img{
+    width: 40px;
+  }
+  
+  .humidity, .wind{
+    font-size: 28px;
+    margin-top: -10px;
+  }
+  
+  
+  .weathetest{
+    background:#fffdfd33;
+  }
+
+
+  table, th, td {
+    border: 1px solid #d2d2d2;
+  }
+
+  .table {
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .weather-table {
+    background-color: #f7f7f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: #874633;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
