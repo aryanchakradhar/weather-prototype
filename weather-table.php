@@ -29,13 +29,12 @@
                     ?>
                 
                     <tr>                
-                        <td><?php echo $data['id']; ?></td>
                         <td><?php echo $data['city_name']; ?></td>
+                        <td><?php echo $data['temperature']; ?></td>
                         <td><?php echo $data['humidity']; ?></td>
                         <td><?php echo $data['wind']; ?></td>
                         <td><?php echo $data['pressure']; ?></td>
                         <td><?php echo $data['date_time']; ?></td>
-                
                     </tr>
                 
                     <?php } ?>

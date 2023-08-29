@@ -101,20 +101,46 @@ function displayWeatherData(data2) {
 
 }
 
+
 searchBtn.addEventListener("click", async () => {
   const city = searchBox.value;
   const data2 = await weather(city);
   displayWeatherData(data2);
-});
+
+  let val = data2;
+      console.log("data2", data2);
+      if (data2.cod !== "404"){
+
+        // to convert json to string as local storage only store string data type
+        let val_str = JSON.stringify(val);
+        
+        // Storing data in local Storage
+        localStorage.setItem(city, val_str);
+    }
+  })
+
 
 // Display default city
 weather("highland")
 
-  .then((data2) => displayWeatherData(data2))
+  .then((data2) => { displayWeatherData(data2);
 
+    let val = data2;
+
+    // to convert json to string as local storage only store string data type
+    let val_str = JSON.stringify(val);
+
+    // Storing data in local Storage
+    localStorage.setItem("highland", val_str);
+
+  })
 
   .catch((error) => {
+    let val_json = JSON.parse(localStorage.getItem("highland"));
+
+    displayWeatherData(val_json);
+
     console.log("Error due to:", error);
   });
 
-  
+

@@ -14,7 +14,7 @@
         <div class="weather-container">
             <form method="POST" action="/weather-prototype/weather.php">
                 <div class="search">
-                    <input name="city_name" id="input" type="text"  spellcheck="false" placeholder="Enter city name.">
+                    <input name="city_name" id="input" type="text" spellcheck="false" placeholder="Enter city name.">
                     <button id="btn" type="submit"> <img src="img/search.png"> </button>
                 </div>
             </form>
@@ -31,15 +31,16 @@
                     </div>
 
                     <div class="col">
-                        <img src="images/wind.png" alt="humidity">
+                        <img src="images/wind.png" alt="wind">
                         <p class="wind"></p>
                     </div>
                 </div>
 
             </div>
 
-            <div>
+            <div class="weather-data-links">
                 <a href="/weather-prototype/weather-table.php">See previous data</a>
+                <a href="/weather-prototype/single-weather.php">See single weather data</a>
             </div>
 
         </div>

@@ -28,6 +28,8 @@ $humidity = $data->main->humidity;
 $wind = $data->wind->speed;
 $pressure = $data->main->pressure;
 $date_time = date('Y-m-d H:i:s', $data->dt);
+// $date_time = '2023-08-28 12:46:20';
+
 
 // Insert variable values to database
 $sql = "INSERT INTO weather (city_name, temperature, humidity, wind, pressure, date_time) 
