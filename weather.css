@@ -180,3 +180,20 @@
   gap: 20px;
 }
 
+.get-started-button {
+  background-color: #68c56b;
+  padding: 20px 50px;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.get-started-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e2e2e2;
+}
