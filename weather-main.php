@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="weather-container">
-            <form method="POST" action="/weather-prototype/weather.php">
+            <form method="POST" id="dataForm">
                 <div class="search">
                     <input name="city_name" id="input" type="text" spellcheck="false" placeholder="Enter city name.">
                     <button id="btn" type="submit"> <img src="img/search.png"> </button>
@@ -39,8 +39,8 @@
             </div>
 
             <div class="weather-data-links">
-                <a href="/weather-prototype/weather-table.php">See previous data</a>
-                <a href="/weather-prototype/single-weather.php">See single weather data</a>
+                <a href="/weather-prototype/weather-table.php" class="weather-link">See previous data</a>
+                <a href="/weather-prototype/single-weather.php" class="weather-link">See single weather data</a>
             </div>
 
         </div>

@@ -36,7 +36,25 @@ $sql = "INSERT INTO weather (city_name, temperature, humidity, wind, pressure, d
           VALUES ('$city_name', '$temperature', '$humidity', '$wind', '$pressure', '$date_time');";
 mysqli_query($conn, $sql);
 
+$values = array (
+    'cod' => $data->cod,
+    'name' => $data->name,
+    'main' => array (
+        'temp' => $data->main->temp,
+        'humidity' => $data->main->humidity,
+    ),
+    'wind' => array (
+        'speed' => $data->wind->speed,
+    ),
+    'weather' => array (
+        '0' => array (
+            'main' => $data->weather[0]->main,
+        )
+    )
+);
+
 // Redirect back to the form interface
-header("Location: weather-main.php")
+header('Content-Type: application/json');
+echo json_encode($values);
 
 ?>

@@ -22,12 +22,12 @@ function displayWeatherData(data2) {
     // City not found
     document.querySelector(".city").innerHTML = "City not found";
     document.querySelector(".temp").innerHTML = "404";
-    document.querySelector(".humidity").innerHTML = "";
-    document.querySelector(".wind").innerHTML = "";
-    weatherIcon.src = "";
-    document.body.style.backgroundImage = "none";
-    return;} else{
-
+    document.querySelector(".humidity").innerHTML = "-";
+    document.querySelector(".wind").innerHTML = "-";
+    return;
+  } 
+  
+  else {
 
   // Stored required data in variable
   let temp = Math.round(data2.main.temp);
@@ -46,7 +46,6 @@ function displayWeatherData(data2) {
   document.querySelector(".temp").innerHTML = temp + "°C";
   document.querySelector(".humidity").innerHTML = humidity + "%";
   document.querySelector(".wind").innerHTML = wind + " km/h";
-
 
 
   if (data2.weather[0].main == "Clouds") {
@@ -97,18 +96,42 @@ function displayWeatherData(data2) {
 
   }
 
-}
+  }
+
+  return;
 
 }
 
 
-searchBtn.addEventListener("click", async () => {
+searchBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
   const city = searchBox.value;
   const data2 = await weather(city);
-  displayWeatherData(data2);
+
+  if (data2.cod == 404) {
+   displayWeatherData(data2);
+    return false;
+  }
+
+  const formData = new FormData(dataForm);
+  formData.append("data2", JSON.stringify(data2));
+
+  const processResponse = await fetch("weather.php", {
+      method: "POST",
+      body: formData
+  });
+
+  if (!processResponse.ok) {
+      throw new Error("Failed to process data in PHP");
+  }
+
+  // Process the response from process.php (if needed)
+  const processedData = await processResponse.json();
+
+  console.log(processedData)
+  displayWeatherData(processedData);
 
   let val = data2;
-      console.log("data2", data2);
       if (data2.cod !== "404"){
 
         // to convert json to string as local storage only store string data type
@@ -117,7 +140,8 @@ searchBtn.addEventListener("click", async () => {
         // Storing data in local Storage
         localStorage.setItem(city, val_str);
     }
-  })
+  }
+  )
 
 
 // Display default city
